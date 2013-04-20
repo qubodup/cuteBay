@@ -1,0 +1,35 @@
+{
+"name": "CuteBay",
+"version": "3.3.3",
+"manifest_version": 2,
+"description": "Let CuteBayCat show you her emotions while you bid!",
+"web_accessible_resources": ["cutebaycat-icon.png", "cutebaycat-icon2.png", "cutebaycat-icon3.png", "icon48.png", "bidfirst3.png", "bidfirst2.png", "bidfirst1.png", "bidfirst0.png", "bidlast3.png", "bidlast2.png", "bidlast1.png", "bidlast0.png", "nobid3.png", "nobid2.png", "nobid1.png", "nobid0.png"],
+"icons": {
+  "16": "icon16.png",
+  "48": "icon48.png",
+  "128": "icon128.png"
+},
+  "content_scripts": [
+  {
+    "matches": ["http://www.ebay.de/*", "http://ebay.de/*"],
+    "js": [
+      "scripts/jquery-1.6.1.min.js",
+      "cutebay.js"
+    ]
+  }
+  ],
+	"background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+	"permissions": [
+    "activeTab",
+    "tabs"
+	],
+"browser_action": {
+  "default_icon": "icon128.png",
+//  "scripts": ["click.js"],
+//  "default_popup": "popup.html",
+  "default_title": "No bid. Bid top!"
+}
+}
